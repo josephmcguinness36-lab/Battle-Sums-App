@@ -1,0 +1,20 @@
+# Settings to manage and configure a Firebase App Hosting backend.
+# https://firebase.google.com/docs/app-hosting/configure
+
+runConfig:
+  # Increase this value if you'd like to automatically spin up
+  # more instances in response to increased traffic.
+  maxInstances: 1
+backend:
+  # Specifies the command to build your application.
+  # This command is run in your project's root directory.
+  # npx --yes is used to ensure the latest version of Next.js is used for building.
+  build: npx --yes next build
+
+  # Specifies the command to start your application.
+  # The $PORT environment variable is automatically provided by App Hosting.
+  start: npx --yes next start -p $PORT
+
+  # Specifies the Node.js version to use.
+  # Using a recent, stable version is recommended.
+  nodeVersion: 20
