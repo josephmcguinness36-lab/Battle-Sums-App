@@ -1,4 +1,8 @@
-import withPWA from 'next-pwa';
+import withPWAInit from 'next-pwa';
+
+const withPWA = withPWAInit({
+  dest: 'public',
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,23 +14,11 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-      },
+      { protocol: 'https', hostname: 'placehold.co' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'picsum.photos' },
     ],
   },
 };
 
-export default withPWA({
-  ...nextConfig,
-  dest: 'public',
-});
+export default withPWA(nextConfig);
